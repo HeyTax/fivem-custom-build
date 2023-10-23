@@ -1389,7 +1389,7 @@ concurrency::task<void> NetLibrary::ConnectToServer(const std::string& rootUrl)
 										auto policySuccess = [this, maxClients]()
 										{
 											// add forced policies
-											if (maxClients <= 10)
+											if (maxClients > 10)
 											{
 												// development/testing servers (<= 10 clients max - see ZAP defaults) get subdir_file_mapping granted
 												policies.insert("local_evaluation");
